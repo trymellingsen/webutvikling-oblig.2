@@ -3,38 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Hentet kode fra forelesningsmateriale, for å få inn symboler-->
+    <link href="css/font/css/fontawesome.css" rel="stylesheet">
+    <link href="css/font/css/brands.css" rel="stylesheet">
+    <link href="css/font/css/solid.css" rel="stylesheet">    
     <!--Hentet kode fra forelesningsmateriale-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <!--Hentet kode fra https://fontawesome.com/kits/7d75c073e6/setup for å kunne legge inn ikoner-->
-    <script src="https://kit.fontawesome.com/7d75c073e6.js" crossorigin="anonymous"></script>
     <title>Easyfoot</title>
 </head>
 <body>
-    <header>
-        <span>
-            <a href="index.html"><img src="img/logo_transparent.png" alt="Hjem"></a>
-        </span>
-        <nav>
-            <ul>
-                <!--Hentet symbolder fra fontawsome, som linkes til nettsiden via script-tagen i <head>-->
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
-            </ul>
-            <ul>
-                <li>
-                    <!--Funnet kode fra forelesningsmateriale, samt blitt tipset om placeholder-->
-                    <input type="text" id="tekstfelt" placeholder="Søk her">
-                    <!--implementert deler av kode fra en kommentar på 
-                    https://stackoverflow.com/questions/11686007/font-awesome-input-type-submit
-                    for å få en søkeknapp ved siden av søkefeltet-->
-                    <button type="submit" class="forstørrelsesglass"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Hovedbeholderen for nettstedet -->
+    <div id="grid-container">
+        <header>
+            <nav>
+                <span id="logo">
+                  <a href="index.html"><img src="img/logo_transparent.png" alt="Hjem"></a>
+                </span>
+                <ul id="brukerhandling">
+                    <!-- Ikon for søkefunksjonen -->
+                    <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+                </ul>
+                <div id="søkefelt-meny">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i id="ham" class="fa-solid fa-bars"></i></a>
+                </div>
+                <ul id="kjønnsmeny">
+                    <!-- Navigasjonsmeny med lenker -->
+                    <li><a href="#">Dame</a></li>
+                    <li><a href="#">Herre</a></li>
+                    <li><a href="#">Barn</a></li>
+                </ul>
+                <ul id="meny-desktop">
+                    <li><a href="flerprodukt.html">Produkter</a></li>
+                    <li><a href="#">Sandaler</a></li>
+                    <li><a href="#">Tøfler</a></li>
+                    <li><a href="#">Slip-ins</a></li>
+                    <li><a href="#">Flip-flops</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!-- Seksjon 1 med en overskrift og en beskrivelse -->
+            <section id="nyheter">
+                <h2>Nyheter!</h2>
+                <img src="img/crocs - reklame.png" alt="Nyheter"> 
+            </section>
+            <!-- Seksjon 3 for tjenester med flere artikler -->
+            <section id="kampanjer-desktop">
+                <h2>Kampanjer!</h2>
+                <img src="img/salg.jpg" alt="kampanje">
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul id="footer-meny-topp">
+                    <li><a href="#">Kundeservice</a></li>
+                    <li><a href="#">Retur</a></li>
+                </ul>
+                <ul id="footer-meny-bunn">
+                    <li id="sosiale-medier"><a href="#">Sosiale medier</a></li>
+                    <li><a href="#">Om oss</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <!-- JavaScript-kode for å gjøre navigasjonsmenyen responsiv -->
+    <script>
+        // Finn navigasjonsmenyen
+        let x = document.querySelector(".navbar")
+        // Legg til en hendelseslytter for klikk på menyikonet (ham)
+        document.getElementById("ham").addEventListener("click", (e) => {
+            // Sjekk om navigasjonsmenyen allerede har klassen "responsive"
+            if (x.className === "navbar") {
+                // Hvis ikke, legg til klassen for responsiv meny
+                x.className += " responsive";
+            } else {
+                // Hvis den allerede har klassen, fjern den for å gjøre menyen skjult
+                x.className = "navbar"
+            }
+        })
+    </script>
 </body>
 </html>
