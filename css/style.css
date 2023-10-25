@@ -1,6 +1,7 @@
 /* Setter standard skrifttype for hele nettsiden */
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 /* Definerer et grid-container som inneholder header, main og footer */
@@ -10,12 +11,10 @@ body {
 }
 
 /* Setter litt padding mellom gridsa */
-header, main, footer {
-    padding: 1rem;
-}
 
 /* Styler header-seksjonen */
 header {
+    width: 100%;
     font-size: 1.5rem;
     font-weight: 600;
     grid-area: header;
@@ -23,24 +22,48 @@ header {
 
 /* Gjør navigasjonselementene i header til flexbokser som er justert mellomrom og til høyre */
 header nav {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    /* justify-content: space-between; */
     position: relative;
 }
 
+header nav #navbar{
+    display: block;
+}
+
+header nav #navbar div{
+    display: flex;
+    justify-content: space-between;
+}
+
 #logo img {
-    height: 10rem;
-    width: 10rem;
+    /* height: auto; */
+    width: 7rem;
+}
+
+#logo a {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: contents;
 }
 
 #brukerhandling {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: stretch;
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
+    /* justify-content: flex-end; */
+    align-items: center;
     gap: 1rem;
-    padding-top: 3rem;
+    font-size: 1.5rem;
+    padding-left: 0;
+    padding-right: 10px;
+    /* padding-top: 3rem; */
     list-style-type: none;
+    margin: 0;
 }
 
 #brukerhandling a {
@@ -49,11 +72,17 @@ header nav {
 
 #søkefelt-meny {
     display: flex;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0;
+    font-size: 1.5rem;
+    justify-content: space-between;
     flex-direction: row-reverse;
-    position: absolute;
-    padding-top: 9rem;
-    padding-left: 1rem;
-    gap: 1rem;
+    /* position: absolute; */
+    /* padding-top: 9rem; */
+    /* padding-left: 1rem; */
+    /* gap: 1rem; */
 }
 
 #søkefelt-meny a {
@@ -62,13 +91,16 @@ header nav {
 
 #kjønnsmeny {
     display: flex;
-    flex-direction: row;
-    position: absolute;
     gap: 1rem;
-    padding-top: 8rem;
-    padding-left: 8rem;
     font-size: 1rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 1rem;
+
 }
 
 #kjønnsmeny a {
@@ -87,24 +119,33 @@ main {
     grid-area: main;
 }
 
-/* Setter bredden til bildet 100% */
-main section img {
-    width: 100%;
-}
-
-/* Fikser nyheter seksjonen */
-#nyheter {
-    padding-top: 1rem;
+/* Fikser main seksjonene */
+main section {
+    margin-top: 2rem;
     text-align: center;
+    border-top: solid 3px black;   
+    border-bottom: solid 3px black;
+    background-color: #F44336; 
+    line-height: 0;
 }
 
-/* Fikser bildet og legger til en ramme */
-#nyheter img {
+/* Fikser bildene og legger til en ramme */
+section img {
     width: 100%;
-    border: solid 1px black;
 }
 
-/* fjerner seksjonen fra mobil side */
+/* Fjerner "link" utseende */
+section a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Fjerner marginen fra toppen av to seksjoner */
+#nyheter, #populaert {
+    margin-top: 0;
+}
+
+/* fjerner kampanjer-dektop fra mobil side */
 #kampanjer-desktop {
     display: none;
 }
@@ -117,53 +158,40 @@ footer {
 
 footer {
     background-color: lightgray;
-    border-radius: 1rem;
-    margin-left: 1rem;
-    margin-right: 1.1rem;
 }
 
 footer ul li {
-    background-color: rgb(161, 161, 161);
-    border-radius: 1rem;
+    list-style: none;
+    background-color: rgb(167, 168, 167);
+    border: solid 1px rgb(71, 71, 71);
+    border-radius: 10%;
 }
 
-#footer-meny-topp {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    list-style-type: none;
-}
-
-#footer-meny-topp a {
+footer ul a {
     color: black;
     text-decoration: none;
 }
 
-#footer-meny-bunn {
+#footer-topp {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+    font-weight: 700;
 }
 
-#footer-meny-bunn a {
-    color: black;
-    text-decoration: none;
+#footer-bunn {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    font-weight: 700;
 }
 
-#sosiale-medier {
-    background-color: #7049e38b;
-    border-radius: 1rem;
+#sosialemedier {
+    background-color: rgb(90, 124, 225);
+}
+
+#footer-desktop {
+    display: none;
 }
 
 
@@ -171,28 +199,35 @@ footer ul li {
 @media only screen and (min-width: 600px) {
     /* Endrer grid-malen for bredere skjermer */
     #grid-container {
-        grid-template-areas: "header header header" "main main main" "footer footer footer";
+        /* grid-template-areas: "header header header" "main main main" "footer footer footer"; */
     }
    
     header {
-        font-size: 3rem;
-        font-weight: 600;
-        grid-area: header;
+        width: 100%;
+    }
+    #logo img {
+        font-size: 1rem;
     }
 
-    #kjønnsmeny {
-        padding-top: 7rem;
+    header nav{
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    header nav #navbar{
+        width: 100%;
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: space-between;
+        align-items: center;
     }
 
     /* Viser den skjulte navigasjonsmenyen*/
     #meny-desktop {
         display: flex;
-        flex-direction: row;
-        position: absolute;
-        text-decoration: none;
-        padding-top: 10rem;
-        gap: 1rem;
-        font-size: 1.4rem;
+        justify-content: space-between;
         list-style: none;
         margin: 0;
     }
@@ -202,29 +237,36 @@ footer ul li {
         text-decoration: none;
     }
 
-    /* Skjuler menyikoner i header */
-    #ham, .fa-magnifying-glass {
+    #kampanjer-desktop {
+        display: contents;
+    }
+
+
+    
+
+    #footer-topp, #footer-bunn {
         display: none;
     }
 
-    #nyheter {
-        width: 40%;
-        align-items: flex-start;
-    }
-
-    /* Fikser nyheter seksjonen */
-    #kampanjer-desktop {
+    #footer-desktop {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 40%;
+        justify-content: space-around;
+        padding: 0;
+        font-weight: 700;
+        background-color: #F44336;
     }
-
-    #kampanjer-desktop h2 {
-        text-align: center;
+    
+    footer ul li {
+        list-style: none;
+        background-color: rgb(167, 168, 167);
+        border: solid 1px rgb(71, 71, 71);
+        border-radius: 10%;
     }
-
-
+    
+    footer ul a {
+        color: black;
+        text-decoration: none;
+    }
 }
 
 

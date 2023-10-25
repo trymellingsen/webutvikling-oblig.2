@@ -3,11 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Hentet kode fra forelesningsmateriale, for å få inn symboler-->
+    <link href="css/font/css/fontawesome.css" rel="stylesheet">
+    <link href="css/font/css/brands.css" rel="stylesheet">
+    <link href="css/font/css/solid.css" rel="stylesheet">    
     <!--Hentet kode fra forelesningsmateriale-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Easyfoot</title>
 </head>
 <body>
-    
+    <!-- Hovedbeholderen for nettstedet -->
+    <div id="grid-container">
+        <header>
+            <nav>
+                <div id="navbar">
+                    <div>
+                        <span id="logo">
+                            <a href="index.html">
+                                <img src="img/logo_transparent.png" alt="Hjem">
+                            </a>
+                        </span>
+                        
+                        <ul id="brukerhandling">
+                                <!-- Ikon for søkefunksjonen -->
+                            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <ul id="søkefelt-meny">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <input type="text" placeholder="Søk her">
+                        <a href="#"><i id="ham" class="fa-solid fa-bars"></i></a>
+                    </ul>
+                    <ul id="kjønnsmeny">
+                        <!-- Navigasjonsmeny med lenker -->
+                        <li><a href="#">Dame</a></li>
+                        <li><a href="#">Herre</a></li>
+                        <li><a href="#">Barn</a></li>
+                    </ul>
+                </div>
+                <ul id="meny-desktop">
+                    <li><a href="flerprodukt.html">Produkter</a></li>
+                    <li><a href="#">Sandaler</a></li>
+                    <li><a href="#">Tøfler</a></li>
+                    <li><a href="#">Slip-ins</a></li>
+                    <li><a href="#">Flip-flops</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+           
+        </main>
+        <footer>
+            <nav>
+                <div id="footer-meny">
+                    <ul id="footer-topp">
+                        <li><a href="#">Kundeservice</a></li>
+                        <li><a href="#">Retur</a></li>
+                    </ul>
+                    <ul id="footer-bunn">
+                        <li id="sosialemedier"><a href="#">Sosiale medier</a></li>
+                        <li><a href="#">Om oss</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <!-- JavaScript-kode for å gjøre navigasjonsmenyen responsiv -->
+    <script>
+        // Finn navigasjonsmenyen
+        let x = document.querySelector(".navbar")
+        // Legg til en hendelseslytter for klikk på menyikonet (ham)
+        document.getElementById("ham").addEventListener("click", (e) => {
+            // Sjekk om navigasjonsmenyen allerede har klassen "responsive"
+            if (x.className === "navbar") {
+                // Hvis ikke, legg til klassen for responsiv meny
+                x.className += " responsive";
+            } else {
+                // Hvis den allerede har klassen, fjern den for å gjøre menyen skjult
+                x.className = "navbar"
+            }
+        })
+    </script>
 </body>
 </html>
