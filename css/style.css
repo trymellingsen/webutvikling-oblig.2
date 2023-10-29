@@ -1,30 +1,34 @@
 /* Setter standard skrifttype for hele nettsiden */
+* {
+    box-sizing: border-box;
+}
+
 body {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 100%;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
 /* Definerer et grid-container som inneholder header, main og footer */
-#grid-container {
-    display: grid;
-    grid-template-areas: "header" "main" "footer";
-}
+
 
 /* Setter litt padding mellom gridsa */
 
 /* Styler header-seksjonen */
 header {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 30px;
     font-weight: 600;
-    grid-area: header;
+    grid-area: header; 
 }
 
 /* Gjør navigasjonselementene i header til flexbokser som er justert mellomrom og til høyre */
 header nav {
     display: block;
     /* justify-content: space-between; */
-    position: relative;
+    /* position: relative;  */
 }
 
 header nav #navbar{
@@ -64,6 +68,7 @@ header nav #navbar div{
     /* padding-top: 3rem; */
     list-style-type: none;
     margin: 0;
+    
 }
 
 #brukerhandling a {
@@ -79,19 +84,22 @@ header nav #navbar div{
     font-size: 1.5rem;
     justify-content: space-between;
     flex-direction: row-reverse;
+    align-items: center;
+    list-style: none;
+    
     /* position: absolute; */
     /* padding-top: 9rem; */
     /* padding-left: 1rem; */
     /* gap: 1rem; */
 }
 
-#søkefelt-meny a {
+
+#søkefelt-meny li a {
     color: black;
 }
 
 #kjønnsmeny {
     display: flex;
-    gap: 1rem;
     font-size: 1rem;
     list-style: none;
     margin: 0;
@@ -100,7 +108,6 @@ header nav #navbar div{
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 1rem;
-
 }
 
 #kjønnsmeny a {
@@ -120,8 +127,8 @@ main {
 }
 
 /* Fikser main seksjonene */
-main section {
-    margin-top: 2rem;
+#innhold section {
+    margin: 0rem;
     text-align: center;
     border-top: solid 3px black;   
     border-bottom: solid 3px black;
@@ -130,19 +137,20 @@ main section {
 }
 
 /* Fikser bildene og legger til en ramme */
-section img {
+#innhold section img {
     width: 100%;
 }
 
 /* Fjerner "link" utseende */
-section a {
+#innhold section a {
     text-decoration: none;
     color: black;
 }
 
 /* Fjerner marginen fra toppen av to seksjoner */
-#nyheter, #populaert {
-    margin-top: 0;
+#innhold div #produkter {
+    margin-top: 2rem;
+    
 }
 
 /* fjerner kampanjer-dektop fra mobil side */
@@ -150,14 +158,136 @@ section a {
     display: none;
 }
 
+/*Main flerprodukt*/
 
-/* Styler footer-seksjonen i gridet */
+main #nav-flerprodukt {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+main #nav-flerprodukt a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+main #nav-flerprodukt p {
+    margin: 0;
+    border: solid 1px black;
+    border-radius: 20%;
+}
+
+/* fikser main på flerproduktside*/
+main #innhold-flerprodukt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+}
+
+#innhold-flerprodukt article {
+    margin: auto;
+    border: solid 1px black;
+    flex-basis: 40%;
+}
+
+main #innhold-flerprodukt img {
+    width: 100%;
+    height: 7rem;
+}
+
+.produkt-artikkel a {
+    text-decoration: none;
+    color: black;
+}
+
+.produkt-artikkel p {
+    padding-left: 0.5rem;
+}
+
+.produkt-artikkel h3 {
+    padding-left: 0.5rem;
+}
+
+/*Main produktside*/
+
+#main-produkt {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#main-produkt img {
+    width: 100%;
+}
+
+#main-produkt #produkt-bilder h4 {
+    padding-left: 1.5rem;
+}
+
+#main-produkt #produkt-bilder i {
+    padding-left: 1rem;
+    font-size: 2rem;
+    list-style: none;
+    color: black;
+}
+
+#main-produkt #produkt-tekst {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+#main-produkt #produkt-tekst h2 {
+    margin-bottom: 0.5rem;
+}
+
+#main-produkt #produkt-tekst p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#main-produkt #produkt-valg article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#main-produkt #produkt-valg p {
+    margin: 0;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+#main-produkt #produkt-informasjon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#main-produkt #om-produktet-desktop {
+    display: none;
+}
+
+/* Fikser på footer seksjonen */
 footer {
     grid-area: footer;
 }
 
 footer {
     background-color: lightgray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 footer ul li {
@@ -177,6 +307,7 @@ footer ul a {
     justify-content: space-around;
     padding: 0;
     font-weight: 700;
+    margin-top: 0;
 }
 
 #footer-bunn {
@@ -184,6 +315,7 @@ footer ul a {
     justify-content: space-around;
     padding: 0;
     font-weight: 700;
+    margin-bottom: 0;
 }
 
 #sosialemedier {
@@ -194,15 +326,21 @@ footer ul a {
     display: none;
 }
 
+#footer-tittel {
+    display: none;
+}
+
 
 /* Mediestørrelsesregel for skjermer som er bredere enn 600px */
 @media only screen and (min-width: 600px) {
     /* Endrer grid-malen for bredere skjermer */
-    #grid-container {
-        /* grid-template-areas: "header header header" "main main main" "footer footer footer"; */
+    body {
+        grid-template-columns: repeat(3, 1fr);
+
     }
    
     header {
+        grid-column: span 3;
         width: 100%;
     }
     #logo img {
@@ -219,9 +357,26 @@ footer ul a {
     header nav #navbar{
         width: 100%;
         display: flex;
-        /* flex-direction: row; */
         justify-content: space-between;
         align-items: center;
+    }
+
+    header nav #navbar div{
+        order: 0;
+    }
+
+    header nav #navbar ul{
+        margin: 0;
+        gap: 1rem;
+        order: 1;
+    }
+
+    header nav #navbar #søkefelt-meny{
+        order: 2;
+    }
+
+    #ham {
+        display: none;
     }
 
     /* Viser den skjulte navigasjonsmenyen*/
@@ -230,6 +385,8 @@ footer ul a {
         justify-content: space-between;
         list-style: none;
         margin: 0;
+        padding-right: 40px;
+        border-bottom: dashed 2px black;
     }
 
     #meny-desktop a {
@@ -237,32 +394,171 @@ footer ul a {
         text-decoration: none;
     }
 
-    #kampanjer-desktop {
-        display: contents;
+    main {
+        grid-column: span 3;
+    }
+
+    #innhold #desktop-oppsett {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 1.5rem;
+    }
+
+    #innhold #desktop-oppsett section{
+        padding-top: 1.5rem;
+    }
+
+    #innhold #desktop-oppsett img {
+        width: 100%;
+        height: 60%;
+    }
+
+    #desktop-oppsett section {
+        width: 30%;
+        margin: 0;
+    }
+
+    #innhold div #produkter {
+        margin-top: 0;
+    }
+
+    main section {
+        background-color: white;
+    }
+
+    #innhold #kampanjer-desktop {
+        display: flex;
+        justify-content: space-around;
+        border-top: solid 3px black;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
     }
 
 
+    #innhold #kampanjer-desktop img {
+        height: 20rem;
+    }
+
+   
+    /*Main flerprodukt*/
+
+
+    main #innhold-flerprodukt {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        background-color: white;
+    }
     
+    #innhold-flerprodukt article {
+        margin: auto;
+        flex-basis: 30%;
+    }
+    
+    main #innhold-flerprodukt img {
+        width: 100%;
+        height: 10rem;
+    }
+    
+
+    /*Main produktside*/
+
+
+    #main-produkt{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #main-produkt #produkt-bilder {
+        order: 0;
+    }
+
+    #main-produkt #produkt-midtseksjon-desktop {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+        padding-left: 2rem;
+    }
+
+
+
+
+
+    
+
+    #main-produkt #om-produktet-desktop {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+    }
+
+    #main-produkt #produkt-informasjon {
+        display: none;
+    }
+
+
+
+    footer {
+        grid-column: span 3;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
     #footer-topp, #footer-bunn {
         display: none;
     }
 
-    #footer-desktop {
+    #footer-tittel{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0;
         font-weight: 700;
         background-color: #F44336;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
+
+    #footer-desktop {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        padding-bottom: 1rem;
+        font-weight: 700;
+        background-color: #F44336;
+    }
+
+    footer nav {
+        font-size: 1.5rem;
     
+    }
+
+    footer nav ul {
+        padding: 0;
+        margin: 0;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        background-color: #F44336;
+    }
+
     footer ul li {
-        list-style: none;
-        background-color: rgb(167, 168, 167);
-        border: solid 1px rgb(71, 71, 71);
-        border-radius: 10%;
+        background-color: #F44336;
+        border: none;
+        border-bottom: solid 2px black;
+        border-radius: 0;
     }
-    
+
     footer ul a {
         color: black;
         text-decoration: none;
