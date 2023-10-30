@@ -223,6 +223,8 @@ main #innhold-flerprodukt img {
 #main-produkt {
     margin-top: 2rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 #main-produkt img {
