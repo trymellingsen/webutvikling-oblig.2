@@ -12,7 +12,7 @@
     <title>Easyfoot</title>
 </head>
 <body>
-    <!-- Hovedbeholderen for nettstedet -->
+    <!-- Header for alle sider -->
     <header>
         <nav>
             <div id="navbar">
@@ -23,7 +23,6 @@
                         </a>
                     </span>
                     <ul id="brukerhandling">
-                            <!-- Ikon for søkefunksjonen -->
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
                         <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
                         <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
@@ -35,7 +34,6 @@
                     <i id="ham" class="fa-solid fa-bars"></i>
                 </div>
                 <ul id="kjønnsmeny">
-                    <!-- Navigasjonsmeny med lenker -->
                     <li><a href="#">Dame</a></li>
                     <li><a href="#">Herre</a></li>
                     <li><a href="#">Barn</a></li>
@@ -95,6 +93,7 @@
             </article>
         </section>
     </main>
+    <!--Footer for alle sider-->
     <footer>
         <nav>
             <ul id="footer-topp">
@@ -132,21 +131,5 @@
             </div>
         </nav>
     </footer>
-    <!-- JavaScript-kode for å gjøre navigasjonsmenyen responsiv -->
-    <script>
-        // Finn navigasjonsmenyen
-        let x = document.querySelector(".navbar")
-        // Legg til en hendelseslytter for klikk på menyikonet (ham)
-        document.getElementById("ham").addEventListener("click", (e) => {
-            // Sjekk om navigasjonsmenyen allerede har klassen "responsive"
-            if (x.className === "navbar") {
-                // Hvis ikke, legg til klassen for responsiv meny
-                x.className += " responsive";
-            } else {
-                // Hvis den allerede har klassen, fjern den for å gjøre menyen skjult
-                x.className = "navbar"
-            }
-        })
-    </script>
 </body>
 </html>
